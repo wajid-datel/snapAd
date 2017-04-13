@@ -9,6 +9,7 @@ declare var jQuery: any;
 })
 export class HeaderComponent implements OnInit {
   showSearch: boolean;
+  tutorial: boolean;
   @ViewChild('inputSearch') searchInput: ElementRef;
   constructor(private rend: Renderer2,
   public responsiveService: ResponsiveService) { }
@@ -16,7 +17,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  searchClick(e){
+  searchClick(){
     this.showSearch = !this.showSearch;
     //TODO focus does not work
     //this.searchInput.nativeElement.focus();

@@ -1,5 +1,5 @@
 <!--TODO Tool tip does not work  -->
-<header class="header">
+<div class="header">
   <div class="branding float-left">
     <h1 class="logo text-center">
       <a href="index.html">
@@ -11,7 +11,7 @@
     </h1>
   </div>
   <div class="topbar">
-      <button class="main-nav-toggle" type="button" (click)="navOpenClick($event)">
+      <button class="main-nav-toggle" type="button" (click)="navOpenClick()">
       <span class="sr-only">Toggle navigation</span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
@@ -20,7 +20,7 @@
     </button>
     <div class="search-container">
       <form id="main-search" class="main-search">
-        <i id="main-search-toggle" class="fa fa-search icon" (click)="searchClick($event, inputSearch)"></i>
+        <i id="main-search-toggle" class="fa fa-search icon" (click)="searchClick()"></i>
         <div id="main-search-input-wrapper" class="main-search-input-wrapper" [hidden]="!showSearch">
           <input type="text" id="main-search-input" class="main-search-input form-control" placeholder="Search..." #inputSearch>
 
@@ -85,4 +85,4 @@
       </div>
     </div>
   </div>
-</header>
+</div>

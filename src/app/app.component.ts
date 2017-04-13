@@ -9,7 +9,7 @@ import {ResponsiveService} from "./responsive.service";
 export class AppComponent implements OnInit{
 
 
-  constructor(private resService: ResponsiveService){
+  constructor(public resService: ResponsiveService){
 
   }
 

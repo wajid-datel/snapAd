@@ -1,0 +1,88 @@
+<!--TODO Tool tip does not work  -->
+<header class="header">
+  <div class="branding float-left">
+    <h1 class="logo text-center">
+      <a href="index.html">
+        <img class="logo-icon" src="assets/images/logo-icon.svg" alt="icon" />
+        <span class="nav-label">
+							<span class="highlight">App</span>Kit
+						</span>
+      </a>
+    </h1>
+  </div>
+  <div class="topbar">
+      <button class="main-nav-toggle" type="button" (click)="navOpenClick($event)">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <i class="icon fa fa-caret-left"></i>
+    </button>
+    <div class="search-container">
+      <form id="main-search" class="main-search">
+        <i id="main-search-toggle" class="fa fa-search icon" (click)="searchClick($event, inputSearch)"></i>
+        <div id="main-search-input-wrapper" class="main-search-input-wrapper" [hidden]="!showSearch">
+          <input type="text" id="main-search-input" class="main-search-input form-control" placeholder="Search..." #inputSearch>
+
+          <span id="clear-search" aria-hidden="true" class="fs1 icon icon_close_alt2 clear-search"></span>
+        </div>
+      </form>
+    </div>
+    <div class="navbar-tools">
+      <div class="utilities-container">
+        <div class="utilities">
+<!--tour          -->
+
+          <div class="item item-tour hidden-xs tour-trigger" tooltip-placement="bottom" uib-tooltip="Guided Tour" (click)="responsiveService.headerPopup = ''; tutorial = !tutorial" ><span class="sr-only">App Tour</span><span class="pe-icon pe-7s-info icon"></span></div>
+          <app-tour [tutorial]="tutorial" ></app-tour>
+          <div class="item item-side-panel">
+            <i id="side-panel-toggle" class="side-panel-toggle panel-hide icon fa fa-signal" tooltip-placement="bottom" uib-tooltip="Activities" (click)="toggleSidePanel()" ><span class="badge badge-circle badge-warning">8</span></i>
+            <div id="side-panel" class="side-panel" [class.side-panel-open]="responsiveService.headerPopup == 'side-panel'">
+              <app-side-panel></app-side-panel>
+            </div>
+          </div>
+
+          <div class="item item-notifications "  [class.open]="responsiveService.headerPopup == 'notifications'">
+            <div class="dropdown-toggle" id="dropdownMenu-notifications" aria-expanded="true" role="button" (click)="toggleNotificationPopup()">
+              <span class="sr-only">Notifications</span>
+              <span class="pe-icon pe-7s-bell icon" tooltip-placement="bottom" uib-tooltip="Notifiations"></span><span class="badge badge-circle badge-danger">3</span>
+            </div>
+            <div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu-notifications">
+              <app-notification-popup></app-notification-popup>
+            </div>
+          </div>
+
+          <div class="item item-messages dropdown " [class.open]="responsiveService.headerPopup == 'messages'">
+            <div class="dropdown-toggle" id="dropdownMenu-messages" aria-expanded="true" role="button" (click)="toggleMessagePopup()">
+              <span class="sr-only">Messages</span>
+              <span class="pe-icon pe-7s-mail icon" tooltip-placement="bottom" tooltip="Messages"></span><span class="badge badge-circle badge-success">5</span>
+            </div>
+            <div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu-messages">
+              <app-messages></app-messages>
+            </div>
+          </div>
+          <div class="item item-more" [class.open]="responsiveService.headerPopup == 'settings'">
+            <div class="dropdown-toggle" id="dropdownMenu-more" aria-expanded="true" role="button" (click)="toggleSettingsPopup()">
+              <span class="sr-only">More</span>
+              <span aria-hidden="true" class="fs1 icon icon_grid-3x3"  ngbTooltip="Settings &amp; Tools"></span>
+            </div>
+            <div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu-more">
+              <app-settings></app-settings>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="user-container dropdown" [class.open]="responsiveService.headerPopup == 'profile'">
+        <div class="dropdown-toggle" id="dropdownMenu-user" aria-expanded="true" role="button" (click)="toggleProfilePopup()">
+          <img src="assets/images/profiles/profile-3.png" alt="" />
+          <i class="fa fa-caret-down"></i>
+        </div>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu-user" >
+          <li><span class="arrow"></span><a role="menuitem" href="user-profile.html"><span class="pe-icon pe-7s-user icon"></span>My Account</a></li>
+          <li><a role="menuitem" href="pricing.html"><span class="pe-icon pe-7s-paper-plane icon"></span>Upgrade Plan</a></li>
+          <li><a role="menuitem" href="login.html"><span class="pe-icon pe-7s-power icon"></span>Sign Out</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>

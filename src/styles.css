@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+@import "~metismenu/dist/metisMenu.min.css";
+@import "~font-awesome/css/font-awesome.min.css";
+@import "~elegant-icons/style.css";
+@import "~pixeden-stroke-7-icon/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css";
+@import "~tether-shepherd/dist/css/shepherd-theme-arrows.css";
+
+@import "assets/css/styles.css";

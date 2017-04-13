@@ -1,0 +1,72 @@
+<div class="main-nav-wrapper" >
+  <nav id="main-nav" class="main-nav">
+    <ul class="metismenu" id="menu">
+
+      <li  class="nav-dashboards" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <a [routerLink]="['dashboard']" >
+          <span aria-hidden="true" class="icon icon_house_alt"></span>
+          <span class="nav-label">Dashboard</span>
+          <span class="badge badge-primary">1</span>
+        </a>
+      </li>
+
+      <li  class="nav-widgets " routerLinkActive="active">
+        <a [routerLink]="['widgets']" >
+          <span aria-hidden="true" class="icon icon_drawer_alt"></span>
+          <span class="nav-label">Widgets</span>
+          <span class="badge badge-info">12</span>
+        </a>
+      </li>
+
+      <li  class=" ">
+        <a href="#">
+          <span aria-hidden="true" class="icon icon_table"></span>
+          <span class="nav-label">Tables</span>
+          <span class="fa arrow"></span>
+        </a>
+        <ul class="sub-menu">
+          <li  class=" " routerLinkActive="active">
+            <a [routerLink]="['tables']">
+              <span class="nav-label">Basic</span>
+            </a>
+          </li>
+          <li  class=" ">
+            <a href="#">
+              <span class="nav-label">Datatables</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li  class="nav-forms" >
+        <a href="#">
+          <span aria-hidden="true" class="icon icon_pencil-edit"></span>
+          <span class="nav-label">Forms</span>
+          <span class="fa arrow"></span>
+        </a>
+        <ul class="sub-menu">
+          <li  class=" " >
+            <a >
+              <span class="nav-label">Basic</span>
+            </a>
+          </li>
+          <li  class=" ">
+            <a href="#">
+              <span class="nav-label">Validation</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li role="presentation" class="divider ">
+      </li>
+      <li  class=" ">
+        <a href="help.html">
+          <span aria-hidden="true" class="icon icon_lifesaver"></span>
+          <span class="nav-label">Help</span>
+          <span class="label label-new">NEW</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>

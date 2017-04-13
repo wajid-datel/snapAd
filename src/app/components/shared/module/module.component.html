@@ -1,0 +1,41 @@
+
+<div class="module-wrapper {{ wrapperClass }}" #moduleElement>
+  <section class="module {{ moduleClass }}" [class.collapsed]="{ 'collapsed':collapsed }">
+    <div class="module-inner">
+      <div class="module-heading" *ngIf="title || meta">
+        <h3 class="module-title">
+          {{ title }}
+        </h3><div class="meta" *ngIf="meta">
+        {{ meta }}
+      </div>
+        <ul class="actions list-inline" *ngIf="controls || showMore">
+          <li class="more-link" *ngIf="showMore">
+            <span ngTransclude="more"></span>
+          </li>
+          <li>
+            <a class="collapse-module" (click)="collapseModule($event)">
+              <span class="icon {{collapsed? 'arrow_carrot-up' : 'arrow_carrot-down'}} " aria-hidden="true"></span>
+            </a>
+          </li>
+          <li>
+            <a class="close-module" (click)="closeModule($event)">
+              <span class="icon icon_close" aria-hidden="true"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="module-content" [ngbCollapse]="collapsed">
+        <div class="module-content-inner {{ contentClass }}">
+          <ng-content class="grid"  #contentItem>
+
+          </ng-content>
+        </div>
+      </div>
+      <div class="module-footer" *ngIf="showFooter">
+        <ng-content select="module-footer">
+
+        </ng-content>
+      </div>
+    </div>
+  </section>
+</div>

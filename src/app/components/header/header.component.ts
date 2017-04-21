@@ -20,11 +20,11 @@ export class HeaderComponent implements OnInit {
   public responsiveService: ResponsiveService) { }
 
   ngOnInit() {
-    this.supportedLanguages = environment.supportedLanguages;
-    let localLanguage = localStorage.getItem('locale') as string;
-    this.selectedLanguage = this.supportedLanguages.find(x=> x.code == localLanguage);
-    if(!this.selectedLanguage)
-      this.selectedLanguage = this.supportedLanguages.find(p=> p.code == environment.locale);
+    // this.supportedLanguages = environment.supportedLanguages;
+    // let localLanguage = localStorage.getItem('locale') as string;
+    // this.selectedLanguage = this.supportedLanguages.find(x=> x.code == localLanguage);
+    // if(!this.selectedLanguage)
+    //   this.selectedLanguage = this.supportedLanguages.find(p=> p.code == environment.locale);
   }
 
   languageChanged(value){

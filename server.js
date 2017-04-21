@@ -22,6 +22,8 @@ app.use(express.static(path.join(__dirname, 'dist')));
 // Set our api routes
 app.use('/api', api);
 
+app.use('/src', express.static(__dirname + '/src'));
+
 // Catch all other routes and return the index file
 app.get('*', function(req, res)  {
   res.sendFile(path.join(__dirname, 'dist/index.html'));

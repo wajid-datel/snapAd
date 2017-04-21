@@ -4,8 +4,8 @@
     <h1 class="logo text-center">
       <a href="index.html">
         <img class="logo-icon" src="assets/images/logo-icon.svg" alt="icon" />
-        <span class="nav-label">
-							<span class="highlight">App</span>Kit
+        <span class="nav-label" >
+							<span class="highlight" i18n="Header App in Bold">App</span><!--i18n: Header Kit not in bold -->Kit<!--/i18n-->
 						</span>
       </a>
     </h1>
@@ -31,7 +31,31 @@
     <div class="navbar-tools">
       <div class="utilities-container">
         <div class="utilities">
-<!--tour          -->
+
+
+          <div class="item item-more" [class.open]="responsiveService.headerPopup == 'language'">
+            <div class="dropdown-toggle" id="dropdownMenu-language" aria-expanded="true" role="button" (click)="toggleLanguagePopup()">
+              <span class="sr-only">Languages</span>
+              <span class="flag-icon flag-icon-{{selectedLanguage.code ==='en' ? 'us' : selectedLanguage.code}}" tooltip-placement="bottom" uib-tooltip="Languages"></span>
+              <i class="fa fa-caret-down"></i>
+            </div>
+            <div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu-language">
+              <span class="arrow"></span>
+              <h4 class="title">Languages</h4>
+
+              <ul class="more-list">
+
+                <li *ngFor="let language of supportedLanguages" value="{{language.code}}"  >
+                  <a role="menuitem" (click)="languageChanged(language.code)" >
+                    <span class="flag-icon flag-icon-{{language.code ==='en' ? 'us' : language.code}}"></span>
+                    <br>{{language.name}}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+
 
           <div class="item item-tour hidden-xs tour-trigger" tooltip-placement="bottom" uib-tooltip="Guided Tour" (click)="responsiveService.headerPopup = ''; tutorial = !tutorial" ><span class="sr-only">App Tour</span><span class="pe-icon pe-7s-info icon"></span></div>
           <app-tour [tutorial]="tutorial" ></app-tour>
@@ -61,6 +85,7 @@
               <app-messages></app-messages>
             </div>
           </div>
+
           <div class="item item-more" [class.open]="responsiveService.headerPopup == 'settings'">
             <div class="dropdown-toggle" id="dropdownMenu-more" aria-expanded="true" role="button" (click)="toggleSettingsPopup()">
               <span class="sr-only">More</span>
@@ -70,8 +95,11 @@
               <app-settings></app-settings>
             </div>
           </div>
+
+
         </div>
       </div>
+
       <div class="user-container dropdown" [class.open]="responsiveService.headerPopup == 'profile'">
         <div class="dropdown-toggle" id="dropdownMenu-user" aria-expanded="true" role="button" (click)="toggleProfilePopup()">
           <img src="assets/images/profiles/profile-3.png" alt="" />
@@ -83,6 +111,9 @@
           <li><a role="menuitem" href="login.html"><span class="pe-icon pe-7s-power icon"></span>Sign Out</a></li>
         </ul>
       </div>
+
+
+
     </div>
   </div>
 </div>

@@ -50,6 +50,5 @@ function getTranslations(file: string) {
 
   fileRequest.send();
   let observable = Observable.of(text);
-  console.log(observable);
   return observable.toPromise();
 }

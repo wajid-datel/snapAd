@@ -2,8 +2,8 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
-      <trans-unit id="570a2001afbfedbc2ef2142f331d5c7c11597059" datatype="html">
-        <source>App</source>
+      <trans-unit id="300ae97904513f9029bef7e46eecfa86c2c63388" datatype="html">
+        <source>App </source>
         <target>Fpp</target>
       </trans-unit>
     </body>

@@ -37,6 +37,7 @@ function getTranslations(file: string) {
     if (fileRequest.readyState === 4) {
       if (fileRequest.status === 200 || fileRequest.status == 0) {
         text = fileRequest.responseText;
+
       }
     }
   };

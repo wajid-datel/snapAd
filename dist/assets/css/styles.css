@@ -976,9 +976,6 @@ button.close:focus {
   .header .utilities-container .item-notifications .dropdown-menu {
     width: 280px;
   }
-  .header .utilities-container .item-language .dropdown-menu {
-    width: 280px;
-  }
   .header .search-container {
     position: static;
   }

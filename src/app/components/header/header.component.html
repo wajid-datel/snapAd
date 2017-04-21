@@ -33,28 +33,6 @@
         <div class="utilities">
 
 
-          <div class="item item-more" [class.open]="responsiveService.headerPopup == 'language'">
-            <div class="dropdown-toggle" id="dropdownMenu-language" aria-expanded="true" role="button" (click)="toggleLanguagePopup()">
-              <span class="sr-only">Languages</span>
-              <span class="flag-icon flag-icon-{{selectedLanguage.code ==='en' ? 'us' : selectedLanguage.code}}" tooltip-placement="bottom" uib-tooltip="Languages"></span>
-              <i class="fa fa-caret-down"></i>
-            </div>
-            <div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu-language">
-              <span class="arrow"></span>
-              <h4 class="title">Languages</h4>
-
-              <ul class="more-list">
-
-                <li *ngFor="let language of supportedLanguages" value="{{language.code}}"  >
-                  <a role="menuitem" (click)="languageChanged(language.code)" >
-                    <span class="flag-icon flag-icon-{{language.code ==='en' ? 'us' : language.code}}"></span>
-                    <br>{{language.name}}
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
 
 
           <div class="item item-tour hidden-xs tour-trigger" tooltip-placement="bottom" uib-tooltip="Guided Tour" (click)="responsiveService.headerPopup = ''; tutorial = !tutorial" ><span class="sr-only">App Tour</span><span class="pe-icon pe-7s-info icon"></span></div>

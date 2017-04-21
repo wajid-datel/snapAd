@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild, Renderer2, ElementRef} from '@angular/core';
 import {ResponsiveService} from "../../responsive.service";
-import { environment } from '../../../environments/environment';
+//import { environment } from '../../../environments/environment';
 declare var jQuery: any;
 
 @Component({
@@ -27,10 +27,10 @@ export class HeaderComponent implements OnInit {
     //   this.selectedLanguage = this.supportedLanguages.find(p=> p.code == environment.locale);
   }
 
-  languageChanged(value){
-    localStorage.setItem('locale', value);
-    location.reload();
-  }
+  // languageChanged(value){
+  //   localStorage.setItem('locale', value);
+  //   location.reload();
+  // }
 
   searchClick(){
     this.showSearch = !this.showSearch;

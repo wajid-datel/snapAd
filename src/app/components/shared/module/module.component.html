@@ -1,6 +1,6 @@
 
 <div class="module-wrapper {{ wrapperClass }}" #moduleElement>
-  <section class="module {{ moduleClass }}" >
+  <section class="module {{ moduleClass }}" [class.collapsed]="{ 'collapsed':collapsed }">
     <div class="module-inner">
       <div class="module-heading" *ngIf="title || meta">
         <h3 class="module-title">
@@ -8,15 +8,17 @@
         </h3><div class="meta" *ngIf="meta">
         {{ meta }}
       </div>
-        <ul class="actions list-inline" *ngIf="controls">
-
+        <ul class="actions list-inline" *ngIf="controls || showMore">
+          <li class="more-link" *ngIf="showMore">
+            <span ngTransclude="more"></span>
+          </li>
           <li>
-            <a class="collapse-module" (click)="collapseModule()">
+            <a class="collapse-module" (click)="collapseModule($event)">
               <span class="icon {{collapsed? 'arrow_carrot-up' : 'arrow_carrot-down'}} " aria-hidden="true"></span>
             </a>
           </li>
           <li>
-            <a class="close-module" (click)="closeModule()">
+            <a class="close-module" (click)="closeModule($event)">
               <span class="icon icon_close" aria-hidden="true"></span>
             </a>
           </li>

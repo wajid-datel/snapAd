@@ -1,4 +1,4 @@
-import {Component, Input, ViewChild} from '@angular/core';
+import {Component, OnInit, Input, ViewChild} from '@angular/core';
 
 
 declare var jQuery: any;
@@ -6,9 +6,9 @@ declare var jQuery: any;
 @Component({
   selector: 'app-module',
   templateUrl: './module.component.html',
-  styleUrls: ['./module.component.css']
+  styleUrls: ['./module.component.css'],
 })
-export class ModuleComponent  {
+export class ModuleComponent implements OnInit {
   @Input()  wrapperClass: string = '';
   @Input()  moduleClass: string = '';
   @Input()  contentClass: string = '';
@@ -21,10 +21,17 @@ export class ModuleComponent  {
   showMore: true;
   showFooter: true;
 
+
+
   constructor() { }
 
-  collapseModule(): void {
-    this.collapsed = !this.collapsed;
+  ngOnInit() {
+    ///TODO Component card does not animates.
+    //jQuery(this.el.nativeElement).sortable();
+  }
+
+  collapseModule(){
+      this.collapsed = !this.collapsed;
   }
 
   closeModule(){

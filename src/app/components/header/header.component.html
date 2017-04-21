@@ -4,8 +4,8 @@
     <h1 class="logo text-center">
       <a href="index.html">
         <img class="logo-icon" src="assets/images/logo-icon.svg" alt="icon" />
-        <span class="nav-label" >
-							<span class="highlight" i18n="Header App in Bold">App</span><!--i18n: Header Kit not in bold -->Kit<!--/i18n-->
+        <span class="nav-label">
+							<span class="highlight">App</span>Kit
 						</span>
       </a>
     </h1>
@@ -31,9 +31,7 @@
     <div class="navbar-tools">
       <div class="utilities-container">
         <div class="utilities">
-
-
-
+<!--tour          -->
 
           <div class="item item-tour hidden-xs tour-trigger" tooltip-placement="bottom" uib-tooltip="Guided Tour" (click)="responsiveService.headerPopup = ''; tutorial = !tutorial" ><span class="sr-only">App Tour</span><span class="pe-icon pe-7s-info icon"></span></div>
           <app-tour [tutorial]="tutorial" ></app-tour>
@@ -63,7 +61,6 @@
               <app-messages></app-messages>
             </div>
           </div>
-
           <div class="item item-more" [class.open]="responsiveService.headerPopup == 'settings'">
             <div class="dropdown-toggle" id="dropdownMenu-more" aria-expanded="true" role="button" (click)="toggleSettingsPopup()">
               <span class="sr-only">More</span>
@@ -73,11 +70,8 @@
               <app-settings></app-settings>
             </div>
           </div>
-
-
         </div>
       </div>
-
       <div class="user-container dropdown" [class.open]="responsiveService.headerPopup == 'profile'">
         <div class="dropdown-toggle" id="dropdownMenu-user" aria-expanded="true" role="button" (click)="toggleProfilePopup()">
           <img src="assets/images/profiles/profile-3.png" alt="" />
@@ -89,9 +83,6 @@
           <li><a role="menuitem" href="login.html"><span class="pe-icon pe-7s-power icon"></span>Sign Out</a></li>
         </ul>
       </div>
-
-
-
     </div>
   </div>
 </div>

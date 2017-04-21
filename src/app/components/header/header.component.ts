@@ -1,7 +1,5 @@
 import {Component, OnInit, ViewChild, Renderer2, ElementRef} from '@angular/core';
 import {ResponsiveService} from "../../responsive.service";
-import { environment } from '../../../environments/environment';
-
 declare var jQuery: any;
 
 @Component({
@@ -12,23 +10,11 @@ declare var jQuery: any;
 export class HeaderComponent implements OnInit {
   showSearch: boolean;
   tutorial: boolean;
-  supportedLanguages: any;
-  selectedLanguage: any;
   @ViewChild('inputSearch') searchInput: ElementRef;
   constructor(private rend: Renderer2,
   public responsiveService: ResponsiveService) { }
 
   ngOnInit() {
-    this.supportedLanguages = environment.supportedLanguages;
-    let localLanguage = localStorage.getItem('locale') as string;
-    this.selectedLanguage = this.supportedLanguages.find(x=> x.code == localLanguage);
-    if(!this.selectedLanguage)
-      this.selectedLanguage = this.supportedLanguages.find(p=> p.code == environment.locale);
-  }
-
-  languageChanged(value){
-    localStorage.setItem('locale', value);
-    location.reload();
   }
 
   searchClick(){
@@ -65,9 +51,5 @@ export class HeaderComponent implements OnInit {
 
   toggleProfilePopup(){
     this.responsiveService.headerPopup == 'profile' ? this.responsiveService.headerPopup = '' : this.responsiveService.headerPopup = 'profile';
-  }
-
-  toggleLanguagePopup(){
-    this.responsiveService.headerPopup == 'language' ? this.responsiveService.headerPopup = '' : this.responsiveService.headerPopup = 'language';
   }
 }

@@ -165,7 +165,7 @@ var PaymentService = (function () {
         this.options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["c" /* RequestOptions */]({ headers: this.headers });
     }
     PaymentService.prototype.getToken = function () {
-        return this.http.post('http://localhost:3001/api/v1/token', this.options).map(function (response) {
+        return this.http.post('/api/v1/token', this.options).map(function (response) {
             return response.json();
         }).catch(this.handleError);
     };
@@ -177,9 +177,9 @@ var PaymentService = (function () {
                     authorization: response.client_token
                 }, function (err, instance) {
                     if (err)
-                        observer.next(err);
+                        observer.error(err);
                     else
-                        _this.processCard(instance, cardDetails).subscribe(function (r) { return observer.next(r); });
+                        _this.processCard(instance, cardDetails).subscribe(function (r) { observer.next(r); });
                 });
             });
         });
@@ -204,9 +204,8 @@ var PaymentService = (function () {
                 method: 'post',
                 data: data
             }, function (err, resp) {
-                if (err)
-                    console.log(err);
                 observer.next(resp);
+                observer.error(err);
             });
         });
     };

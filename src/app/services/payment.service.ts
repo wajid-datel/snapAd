@@ -18,7 +18,7 @@ export class PaymentService {
   }
 
   getToken():Observable<any>{
-    return this.http.post('http://localhost:3001/api/v1/token', this.options).map((response: Response)=> {
+    return this.http.post('/api/v1/token', this.options).map((response: Response)=> {
       return response.json();
     }).catch(this.handleError);
   }
@@ -31,9 +31,9 @@ export class PaymentService {
           authorization: response.client_token
         }, (err, instance)=> {
           if (err)
-            observer.next(err);
+            observer.error(err);
           else
-            this.processCard(instance, cardDetails).subscribe(r => observer.next(r));
+            this.processCard(instance, cardDetails).subscribe(r => {observer.next(r) });
         })
       });
     });
@@ -62,8 +62,8 @@ export class PaymentService {
         method: 'post',
         data: data
       }, (err, resp) => {
-        if (err)console.log(err);
         observer.next(resp);
+        observer.error(err);
       });
 
     });

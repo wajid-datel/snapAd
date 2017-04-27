@@ -18,7 +18,7 @@ export class PaymentService {
   }
 
   getToken():Observable<any>{
-    return this.http.post('http://localhost:3001/api/v1/token', this.options).map((response: Response)=> {
+    return this.http.post('/api/v1/token', this.options).map((response: Response)=> {
       return response.json();
     }).catch(this.handleError);
   }

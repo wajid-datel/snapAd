@@ -165,7 +165,7 @@ var PaymentService = (function () {
         this.options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["c" /* RequestOptions */]({ headers: this.headers });
     }
     PaymentService.prototype.getToken = function () {
-        return this.http.post('http://localhost:3001/api/v1/token', this.options).map(function (response) {
+        return this.http.post('/api/v1/token', this.options).map(function (response) {
             return response.json();
         }).catch(this.handleError);
     };

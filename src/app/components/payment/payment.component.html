@@ -1,0 +1,41 @@
+<div class="content-wrapper view">
+  <div class="container-fluid">
+    <h2 class="view-title">Dashboard</h2>
+
+
+
+      <app-module [title]="'payment'" [wrapperClass]="'col-lg-4 col-md-6 col-sm-12 col-xs-12'" >
+        <form name="payment" (ngSubmit)="processPayment()" *ngIf="showForm">
+
+          <div id="error-message"></div>
+
+
+            <label class="control-label" for="amount">Amount (X.XX)</label>
+            <input class="form-control" type="number" name="amount" id="amount" [(ngModel)]="amount"/>
+
+
+            <label class="control-label" for="card-number">Credit Card Number (XXXX XXXX XXXX XXXX)</label>
+            <input class="form-control" type="text" name="cardNumber" id="card-number" [(ngModel)]="creditCardNumber"/>
+
+
+            <label class="control-label" for="expiration-date">Expiration Date (MM/YY)</label>
+            <input class="form-control" type="text" id="expiration-date" name="expirationDate" [(ngModel)]="expirationDate"/>
+          <br>
+          <button class="btn btn-success pull-right" type="submit">Pay Now</button>
+        </form>
+
+        <div class="module-footer">
+          <ul class="utilities list-inline">
+            <li><a href="#" tooltip-placement="top" uib-tooltip="Copy"><i class="fa fa-files-o"></i></a></li>
+            <li><a href="#" tooltip-placement="top" uib-tooltip="Edit"><i class="fa fa-pencil"></i></a></li>
+            <li><a href="#" tooltip-placement="top" uib-tooltip="Favourite"><i class="fa fa-star"></i></a></li>
+            <li><a href="#" tooltip-placement="top" uib-tooltip="Archive"><i class="fa fa-archive"></i></a></li>
+            <li><a href="#" tooltip-placement="top" uib-tooltip="Delete"><i class="fa fa-trash"></i></a></li>
+          </ul>
+        </div>
+      </app-module>
+
+
+  </div>
+</div>
+

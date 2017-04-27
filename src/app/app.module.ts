@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from "@angular/router";
 import { MasonryModule } from 'angular2-masonry';
 import { NgbModule, NgbCollapseModule, NgbTooltipConfig, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
-import { } from ''
+import {ToastModule} from 'ng2-toastr/ng2-toastr';
 
 import { appRoutes } from "./routes";
 import { AppComponent } from './app.component';
@@ -23,6 +23,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SettingsComponent } from './components/settings/settings.component';
 import { SidePanelComponent } from './components/side-panel/side-panel.component';
 import { TourComponent } from './components/tour/tour.component';
+import { PaymentComponent } from './components/payment/payment.component';
+import { PaymentService } from './services/payment.service';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { TourComponent } from './components/tour/tour.component';
     SettingsComponent,
     SidePanelComponent,
     TourComponent,
+    PaymentComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -49,10 +52,12 @@ import { TourComponent } from './components/tour/tour.component';
     NgbModule,
     NgbCollapseModule,
     NgbTooltipModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ToastModule.forRoot()
   ],
   providers: [
     ResponsiveService,
+    PaymentService,
     NgbTooltipConfig
   ],
   bootstrap: [AppComponent]

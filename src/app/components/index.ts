@@ -3,3 +3,4 @@
  */
 export * from "./dashboard/dashboard.component";
 export * from "./widgets/widgets.component";
+export * from "./payment/payment.component";

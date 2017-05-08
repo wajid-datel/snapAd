@@ -162,7 +162,6 @@ export class PaymentService {
   }
 
   loadScript() {
-    console.log('preparing to load...')
     let node = document.createElement('script');
     node.src = 'https://www.paypalobjects.com/api/checkout.js';
     node.type = 'text/javascript';

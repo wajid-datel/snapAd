@@ -18,7 +18,7 @@ export class PaymentComponent implements OnInit, AfterViewInit {
   expirationDate = '10/2019';
   cvvNumber = 123;
   showForm = true;
-  loading= true;
+  loaded = false;
 
   @ViewChild('payPalButton') el;
   @ViewChild('cardForm') cardForm;
@@ -28,6 +28,7 @@ export class PaymentComponent implements OnInit, AfterViewInit {
     this.toastr.setRootViewContainerRef(vcr);
   }
 
+
   ngOnInit() {
     this.toastr.success('You are awesome!', 'Success!');
   }
@@ -35,6 +36,7 @@ export class PaymentComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(){
     this.processPaypal();
     this.processPaymentWithHostedFields();
+    setTimeout(()=> {this.loaded = true;}, 3000);
   }
 
   processPayment(){

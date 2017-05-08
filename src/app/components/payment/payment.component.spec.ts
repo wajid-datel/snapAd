@@ -1,5 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import {} from '@angular/core'
+import { async, ComponentFixture, TestBed  } from '@angular/core/testing';
 
 import { PaymentComponent } from './payment.component';
 import {ModuleComponent} from '../shared/module/module.component';
@@ -27,7 +26,9 @@ describe('PaymentComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(PaymentComponent);
     component = fixture.componentInstance;
+
     fixture.detectChanges();
+    fixture.autoDetectChanges(true);
   });
 
   it('should create', () => {

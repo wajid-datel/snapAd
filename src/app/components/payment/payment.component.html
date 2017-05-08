@@ -47,6 +47,7 @@
 
 
       <app-module [title]="'Credit Cards'" [wrapperClass]="'col-lg-4 col-md-6 col-sm-12 col-xs-12'" >
+        <app-loader [variant]="4" [hidden]="!loading"></app-loader>
         <form name="payment" (ngSubmit)="processPayment()" *ngIf="showForm">
 
           <div id="error-message"></div>

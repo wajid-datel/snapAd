@@ -8,7 +8,7 @@ import {ResponsiveService} from "./responsive.service";
 })
 export class AppComponent implements OnInit{
 
-
+  title = 'app works!';
   constructor(public resService: ResponsiveService){
 
   }

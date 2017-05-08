@@ -1,12 +1,10 @@
 import {Injectable, ElementRef} from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 
-import { Http, Response, Headers, RequestOptions } from '@angular/http'
+import { Http, Headers, RequestOptions } from '@angular/http'
 import * as braintree from 'braintree-web/client';
 import * as hostedFields from 'braintree-web/hosted-fields';
 import * as paypalCheckout from 'braintree-web/paypal-checkout'
-import {observable} from "rxjs/symbol/observable";
-import {instantiateDefaultStyleNormalizer} from "@angular/platform-browser/animations/src/providers";
 
 declare let paypal: any;
 declare let jQuery: any;
@@ -18,7 +16,6 @@ export class PaymentService {
 
   constructor(private http: Http) {
     this.loadScript();
-
   }
 
   processCard(cardDetails): Observable<any> {
@@ -171,6 +168,8 @@ export class PaymentService {
     node.type = 'text/javascript';
     node.async = true;
     node.charset = 'utf-8';
+    node.setAttribute('data-version-4', '');
+    node.setAttribute('data-log-level', 'error');
     document.getElementsByTagName('head')[0].appendChild(node);
   }
 
@@ -228,7 +227,8 @@ export class PaymentService {
 
 
   paypalCreateButton(paypalInstance, instance, amount, el, observer) {
-
+   // console.log(paypalCheckout.render);
+   // console.log(paypalLib.render);
     paypal.Button.render({
       env: 'sandbox', // or 'sandbox' 'production'
 

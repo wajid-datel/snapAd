@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NotificationPopupComponent } from './notification-popup.component';
+import {ResponsiveService} from '../../responsive.service';
 
 describe('NotificationPopupComponent', () => {
   let component: NotificationPopupComponent;
@@ -8,7 +9,8 @@ describe('NotificationPopupComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NotificationPopupComponent ]
+      declarations: [ NotificationPopupComponent ],
+      providers: [ResponsiveService]
     })
     .compileComponents();
   }));

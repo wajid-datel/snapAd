@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WidgetsComponent } from './widgets.component';
+import { WidgetsComponent, ModuleComponent, LoaderComponent} from '../index';
+import {NgbCollapseModule} from '@ng-bootstrap/ng-bootstrap'
 
 describe('WidgetsComponent', () => {
   let component: WidgetsComponent;
@@ -8,7 +9,8 @@ describe('WidgetsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WidgetsComponent ]
+      declarations: [ WidgetsComponent, ModuleComponent, LoaderComponent ],
+      imports: [NgbCollapseModule]
     })
     .compileComponents();
   }));

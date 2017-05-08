@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SidePanelComponent } from './side-panel.component';
+import {ResponsiveService} from '../../responsive.service';
 
 describe('SidePanelComponent', () => {
   let component: SidePanelComponent;
@@ -8,7 +9,8 @@ describe('SidePanelComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SidePanelComponent ]
+      declarations: [ SidePanelComponent ],
+      providers: [ResponsiveService]
     })
     .compileComponents();
   }));

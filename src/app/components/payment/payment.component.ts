@@ -18,6 +18,7 @@ export class PaymentComponent implements OnInit, AfterViewInit {
   expirationDate = '10/2019';
   cvvNumber = 123;
   showForm = true;
+  loading= true;
 
   @ViewChild('payPalButton') el;
   @ViewChild('cardForm') cardForm;
@@ -37,6 +38,7 @@ export class PaymentComponent implements OnInit, AfterViewInit {
   }
 
   processPayment(){
+    console.log(this.cvvNumber);
     let data = {amount: this.amount, creditCardNumber: this.creditCardNumber, expirationDate: this.expirationDate, cvv: this.cvvNumber };
     this.paymentService.processCard(data).subscribe((response: any)=> {
         console.log(response);
